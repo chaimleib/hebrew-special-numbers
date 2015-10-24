@@ -22,19 +22,21 @@ However, many such letter combinations produce words that are customarily avoide
 ### Setup
 
 1. Clone the repo. On the command line:
-```bash
-git clone https://github.com/chaimleib/hebrew-special-numbers.git
-```
+    ```bash
+    git clone https://github.com/chaimleib/hebrew-special-numbers.git
+    ```
+
 2. Use a YAML library to load `hebrew-special-numbers/styles/default.yml` into an associative array. For example, in Python (with the `pyyaml` package installed):
-```python
-import yaml
-hsn = yaml.load(open('hebrew-special-numbers/styles/default.yml'))
-```
-2a. Optional: Load in any additional styles and recursively merge them into your associative array. This may require defining a recursive `merge` function.
-```python
-# using merge() by Andrew Cooke, http://stackoverflow.com/a/7205107
-hsn = merge(hsn, yaml.load(open('hebrew-special-numbers/styles/chaipower.yml')))
-```
+    ```python
+    import yaml
+    hsn = yaml.load(open('hebrew-special-numbers/styles/default.yml'))
+    ```
+
+3. Optional: Load in any additional styles and recursively merge them into your associative array. This may require defining a recursive `merge` function.
+    ```python
+    # using merge() by Andrew Cooke, http://stackoverflow.com/a/7205107
+    hsn = merge(hsn, yaml.load(open('hebrew-special-numbers/styles/chaipower.yml')))
+    ```
 
 ### Generating numerals
 Basic sample code for values less than 1000, in Python:
