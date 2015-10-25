@@ -9,9 +9,9 @@ This project is a repository of [Hebrew numeral][Hebrew numerals] respellings, d
 
 ## Features
 * Compatible with YAML 1.1 and higher.
-* Includes additional files for:
-    * Using חי instead of יח for 18.
-    * Legibility mode, where easily-confused letters are spelled out.
+* Includes extensions for:
+    * `chaipower` - Uses חי instead of יח for 18.
+    * `legibility` - where easily-confused letters are spelled out.
 * Free and open-source under the non-restrictive MIT License.
 
 ## Background
