@@ -25,6 +25,7 @@ However, many such letter combinations produce words that are customarily avoide
 
 ### Setup
 
+#### Basic
 1. Clone the repo. On the command line:
     ```bash
     git clone https://github.com/chaimleib/hebrew-special-numbers.git
@@ -36,10 +37,16 @@ However, many such letter combinations produce words that are customarily avoide
     hsn = yaml.load(open('hebrew-special-numbers/styles/default.yml'))
     ```
 
-3. Optional: Load in any additional styles and recursively merge them into your associative array. This may require defining a recursive `merge` function.
+3. Optional: It is possible to create styles by cascading styles on top of each other. Load in any additional styles and recursively merge them into your associative array. This may require defining a recursive `merge` function.
     ```python
     # using merge() by Andrew Cooke, http://stackoverflow.com/a/7205107
-    hsn = merge(hsn, yaml.load(open('hebrew-special-numbers/styles/chaipower.yml')))
+    chaipower = yaml.load(open('hebrew-special-numbers/styles/chaipower.yml'))
+    hsn = merge(hsn, chaipower)
+    ```
+
+4. Optional: To clarify what order the styles were added, update the 'order' key:
+    ```python
+    hsn = ['default', 'chaipower']
     ```
 
 ### Generating numerals

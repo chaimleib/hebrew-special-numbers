@@ -41,9 +41,9 @@
 # for example code.
 
 version:
-    release: "1.0.1"
-    additions: {}
-    order: []  # What order the additions were merged. Required for >1 addition
+    styles:
+        default: '2.0.0'
+    order: []  # What order styles were merged. For composite styles
 separators:
     geresh: ׳
     gershayim: ״

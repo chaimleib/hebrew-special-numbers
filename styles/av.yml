@@ -31,7 +31,7 @@
 # In typical usage, gershayim should be inserted to indicate numerical value.
 
 version:
-    additions:
+    styles:
         av: '1.0.0'
 specials:
     5: הי

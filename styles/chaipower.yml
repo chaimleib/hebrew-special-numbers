@@ -29,7 +29,7 @@
 # as חי, chai, which means "life."
 
 version:
-    additions:
+    styles:
         chaipower: "1.0.1"
 specials:
     18: חי

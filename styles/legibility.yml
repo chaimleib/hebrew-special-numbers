@@ -32,7 +32,7 @@
 # In typical usage, gershayim should be inserted to indicate numerical value.
 
 version:
-    additions:
+    styles:
         legibility: "1.0.0"
 specials:
     4: דלת
