@@ -9,8 +9,10 @@ This project is a repository of [Hebrew numeral][Hebrew numerals] respellings, d
 
 ## Features
 * Compatible with YAML 1.1 and higher.
-* Includes extra additions for people who like חי and כח!
-* Free and open-source under MIT.
+* Includes additional files for:
+    * Using חי instead of יח for 18.
+    * Legibility mode, where easily-confused letters are spelled out.
+* Free and open-source under the non-restrictive MIT License.
 
 ## Background
 In making programs that produce [Hebrew numerals][], most numbers follow a set pattern of combining letters in order from largest to smallest until the proper [gematria][] sum is produced.
@@ -74,6 +76,8 @@ def add_gershayim(s):
         ])
     return s
 ```
+
+See also `test/test.py`.
 
 
 [Hebrew numerals]: https://en.wikipedia.org/wiki/Hebrew_numerals
