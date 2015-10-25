@@ -1,0 +1,58 @@
+# The MIT License (MIT)
+#
+# Copyright (c) 2015 Chaim-Leib Halbert <chaim.leib.halbert@gmail.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+# To read documentation or to make contributions, visit
+#   https://github.com/chaimleib/hebrew-special-numbers
+
+# About This File
+#
+# This set of specials fully spells out all numerals that would otherwise be a
+# single letter.
+#
+# In typical usage, gershayim should be inserted to indicate numerical value.
+
+version:
+    additions:
+        fullspell: '1.0.0'
+specials:
+    1: אלף
+    2: בית
+    3: גימל
+    4: דלת
+    5: הה
+    6: ויו
+    7: זין
+    8: חית
+    9: טית
+    10: יוד
+    20: כף
+    30: למד
+    40: מם
+    50: נון
+    60: סמך
+    70: עין
+    80: פה
+    90: צדיק
+    100: קוף
+    200: ריש
+    300: שין
+    400: תיו

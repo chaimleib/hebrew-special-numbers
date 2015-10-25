@@ -11,7 +11,9 @@ This project is a repository of [Hebrew numeral][Hebrew numerals] respellings, d
 * Compatible with YAML 1.1 and higher.
 * Includes extensions for:
     * `chaipower` - Uses חי instead of יח for 18.
-    * `legibility` - where easily-confused letters are spelled out.
+    * `legibility` - Spells out commonly-confused letters for clarity.
+    * `fullspell` - Spells out all single-letter numerals.
+    * `av`, `sag`, `mah`, `ban` - Contains letter spellings for Kabbalistic applications.
 * Free and open-source under the non-restrictive MIT License.
 
 ## Background
