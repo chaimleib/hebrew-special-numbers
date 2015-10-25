@@ -25,11 +25,21 @@
 
 # About This File
 #
-# Sometimes when writing dates or currency amounts, it is desired to write 18
-# as חי, chai, which means "life."
+# This set of specials aids in distinguishing letters of similar appearance.
+# This was commonly done in older books where it was difficult to produce crisp
+# type consistently, and still appears in some books today.
+#
+# In typical usage, gershayim should be inserted to indicate numerical value.
 
 version:
     styles:
-        chaipower: "2.0.0"
+        legibility: "1.0.0"
 specials:
-    18: חי
+    4: דלת
+    6: ויו
+    10: יוד
+    30: למד
+    40: מם
+    50: נון
+    60: סמך
+    200: ריש

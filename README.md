@@ -9,8 +9,12 @@ This project is a repository of [Hebrew numeral][Hebrew numerals] respellings, d
 
 ## Features
 * Compatible with YAML 1.1 and higher.
-* Includes extra additions for people who like חי and כח!
-* Free and open-source under MIT.
+* Includes style extensions for:
+    * `chaipower` - Uses חי instead of יח for 18.
+    * `legibility` - Spells out commonly-confused letters for clarity.
+    * `fullspell` - Spells out all single-letter numerals.
+    * `av`, `sag`, `mah`, `ban` - Contains letter spellings for Kabbalistic applications.
+* Free and open-source under the non-restrictive MIT License.
 
 ## Background
 In making programs that produce [Hebrew numerals][], most numbers follow a set pattern of combining letters in order from largest to smallest until the proper [gematria][] sum is produced.
@@ -21,6 +25,7 @@ However, many such letter combinations produce words that are customarily avoide
 
 ### Setup
 
+#### Basic
 1. Clone the repo. On the command line:
     ```bash
     git clone https://github.com/chaimleib/hebrew-special-numbers.git
@@ -32,10 +37,16 @@ However, many such letter combinations produce words that are customarily avoide
     hsn = yaml.load(open('hebrew-special-numbers/styles/default.yml'))
     ```
 
-3. Optional: Load in any additional styles and recursively merge them into your associative array. This may require defining a recursive `merge` function.
+3. Optional: It is possible to create styles by cascading styles on top of each other. Load in any additional styles and recursively merge them into your associative array. This may require defining a recursive `merge` function.
     ```python
     # using merge() by Andrew Cooke, http://stackoverflow.com/a/7205107
-    hsn = merge(hsn, yaml.load(open('hebrew-special-numbers/styles/chaipower.yml')))
+    chaipower = yaml.load(open('hebrew-special-numbers/styles/chaipower.yml'))
+    hsn = merge(hsn, chaipower)
+    ```
+
+4. Optional: To clarify what order the styles were added, update the 'order' key:
+    ```python
+    hsn = ['default', 'chaipower']
     ```
 
 ### Generating numerals
@@ -74,6 +85,18 @@ def add_gershayim(s):
         ])
     return s
 ```
+
+See also `test/test.py`.
+
+# Change log
+* 1.0.0 - first release
+* 2.0.0:
+    * new styles: legibility, fullspell, av, sag, mah, ban
+    * more documentation
+    * fix style name for chaipower
+    * rename 'version.additions' to 'version.styles'
+    * remove redundant 'version.release' field, put under 'version.styles'
+    * add optional 'versions.order' list
 
 
 [Hebrew numerals]: https://en.wikipedia.org/wiki/Hebrew_numerals

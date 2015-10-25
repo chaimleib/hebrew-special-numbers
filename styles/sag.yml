@@ -25,11 +25,15 @@
 
 # About This File
 #
-# Sometimes when writing dates or currency amounts, it is desired to write 18
-# as חי, chai, which means "life."
+# This set of specials lists the letter spellings used to spell the Divine Name
+# known as Sag (ס״ג, 63).
+#
+# In typical usage, gershayim should be inserted to indicate numerical value.
 
 version:
     styles:
-        chaipower: "2.0.0"
+        sag: '1.0.0'
 specials:
-    18: חי
+    5: הי
+    6: ואו
+    10: יוד

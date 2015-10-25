@@ -19,10 +19,31 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+#
+# To read documentation or to make contributions, visit
+#   https://github.com/chaimleib/hebrew-special-numbers
+
+# About This File
+#
+# This style should contain data sufficient for the majority of cases where
+# Hebrew numerals must be generated.
+#
+# For most cases, the typical algorithm using only the 'numerals' and possibly
+# the 'separators' keys is sufficient. However, some special cases not following
+# the typical algorithm exist. To cover these, the members of the 'specials' key
+# are provided.
+#
+# If a different style is desired, modifications can be stored in a separate
+# YAML file and deep-merged with the contents of this file. See
+#
+#   https://github.com/chaimleib/hebrew-special-numbers
+#
+# for example code.
 
 version:
-    release: "1.0.0"
-    additions: {}
+    styles:
+        default: '2.0.0'
+    order: []  # What order styles were merged. For composite styles
 separators:
     geresh: ׳
     gershayim: ״
