@@ -43,6 +43,7 @@
 version:
     release: "1.0.1"
     additions: {}
+    order: []  # What order the additions were merged. Required for >1 addition
 separators:
     geresh: ׳
     gershayim: ״
