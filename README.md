@@ -88,6 +88,16 @@ def add_gershayim(s):
 
 See also `test/test.py`.
 
+# Change log
+* 1.0.0 - first release
+* 2.0.0:
+    * new styles: legibility, fullspell, av, sag, mah, ban
+    * more documentation
+    * fix style name for chaipower
+    * rename 'version.additions' to 'version.styles'
+    * remove redundant 'version.release' field, put under 'version.styles'
+    * add optional 'versions.order' list
+
 
 [Hebrew numerals]: https://en.wikipedia.org/wiki/Hebrew_numerals
 [gematria]: https://en.wikipedia.org/wiki/Gematria
