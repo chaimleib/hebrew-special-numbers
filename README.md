@@ -1,7 +1,7 @@
 # hebrew-special-numbers
 
 ## Purpose
-This project is a repository of [Hebrew numeral][Hebrew numerals] respellings, designed for use in other libraries. `hebrew-special-numbers` has three goals:
+This project holds data for generating [Hebrew numerals][]. `hebrew-special-numbers` has three goals:
 
 * Platform-independence
 * Ease-of-use
@@ -9,6 +9,7 @@ This project is a repository of [Hebrew numeral][Hebrew numerals] respellings, d
 
 ## Features
 * Compatible with YAML 1.1 and higher.
+* [Gershayim][] marks (ט״ו vs טו) are optional.
 * Includes style extensions for:
     * `chaipower` - Uses חי instead of יח for 18.
     * `legibility` - Spells out commonly-confused letters for clarity.
@@ -17,18 +18,29 @@ This project is a repository of [Hebrew numeral][Hebrew numerals] respellings, d
 * Free and open-source under the non-restrictive MIT License.
 
 ## Background
-In making programs that produce [Hebrew numerals][], most numbers follow a set pattern of combining letters in order from largest to smallest until the proper [gematria][] sum is produced.
+In making programs that produce [Hebrew numerals][], most numbers follow a set pattern of combining letters in order from largest to smallest until the proper [gematria][] sum is produced. For example, 123:
 
-However, many such letter combinations produce words that are customarily avoided. On one side of the spectrum, since it is forbidden to take the Divine Name in vain, combinations otherwise spelling out Divine Names, like for 15 and 16, are spelled as 9+6 or 9+7, rather than as 10+5 and 10+6. On the opposite end of the spectrum, 270 would normally spell "evil" and 278 would spell "murder." Other examples exist. The solution for such words is to reorder the letters to avoid the undesired word.
+* ק = 100
+* כ = 20
+* ג = 3
+
+This yields קכ״ג.
+
+To aid in such regular cases, this project includes a lookup table for generating regular numerals. See `styles/defaults.yml`, the 'numerals' and 'separators' keys.
+
+However, many such letter combinations produce words that are customarily avoided. On one side of the spectrum, since it is forbidden to take the Divine Name in vain, combinations otherwise spelling out Divine Names, like for 15 and 16, are spelled as 9+6 (ט״ו) or 9+7 (ט״ז), rather than as 10+5 and 10+6. On the opposite end of the spectrum, 270 (ע״ר) would normally spell "evil" and 278 (רח״צ) would normally spell "murder." Other examples exist. The solution for such words is to reorder the letters to avoid the undesired word.
+
+Since many such special exceptions exist, this project includes a list mapping the numerical values to the irregular Hebrew numeral spelling. See `styles/defaults.yml`, in the 'specials' key.
+
+In addition, sometimes single-letter numerals are spelled out in full. For such cases, the `legibility`, `fullspell`, `av`, `sag`, `mah` and `ban` styles may be useful.
 
 ## Usage
 
 ### Setup
 
-#### Basic
-1. Clone the repo. On the command line:
+1. Download the [latest binary][] and expand it. On a Unix-like command line:
     ```bash
-    git clone https://github.com/chaimleib/hebrew-special-numbers.git
+    tar -xf hebrew-special-numbers-*.tar.gz  # produces hebrew-special-numbers/
     ```
 
 2. Use a YAML library to load `hebrew-special-numbers/styles/default.yml` into an associative array. For example, in Python (with the `pyyaml` package installed):
@@ -46,7 +58,7 @@ However, many such letter combinations produce words that are customarily avoide
 
 4. Optional: To clarify what order the styles were added, update the 'order' key:
     ```python
-    hsn = ['default', 'chaipower']
+    hsn['version']['order'] = ['default', 'chaipower']
     ```
 
 ### Generating numerals
@@ -98,6 +110,7 @@ See also `test/test.py`.
     * remove redundant 'version.release' field, put under 'version.styles'
     * add optional 'versions.order' list
 
-
+[latest binary]: https://github.com/chaimleib/hebrew-special-numbers/releases/download/2.0.0/hebrew-special-numbers-2.0.0.tar.gz
 [Hebrew numerals]: https://en.wikipedia.org/wiki/Hebrew_numerals
 [gematria]: https://en.wikipedia.org/wiki/Gematria
+[gershayim]: https://en.wikipedia.org/wiki/Gershayim
