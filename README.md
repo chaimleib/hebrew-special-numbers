@@ -71,8 +71,6 @@ In addition, sometimes single-letter numerals are spelled out in full. For such 
 Basic sample code for values less than 1000, in Python:
 
 ```python
-import yaml
-
 def hebrew_numeral(val, gershayim=True):
     # 1. Lookup in specials
     if val in hsn['specials']:
