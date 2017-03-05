@@ -1,2 +1,5 @@
 .DS_Store
 .*.swp
+*.py?
+hebrew_special_numbers.egg-info
+

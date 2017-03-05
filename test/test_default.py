@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # The MIT License (MIT)
 #
 # Copyright (c) 2015 Chaim-Leib Halbert <chaim.leib.halbert@gmail.com>
@@ -20,12 +21,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import os
+import unittest
+from os import path
+import yaml  # requires `pip install pyyaml`
+proj_dir = path.dirname(path.dirname(path.realpath(__file__)))
+hsn = yaml.load(open(path.join(proj_dir, 'styles/default.yml')))
 
-this_dir = os.path.dirname(os.path.realpath(__file__))
-hsn = yaml.load(open(os.path.realpath('styles/default.yml')))
-
-import yaml
 
 def hebrew_numeral(val, gershayim=True):
     # 1. Lookup in specials
@@ -57,15 +58,19 @@ def add_gershayim(s):
         ])
     return s
 
-# Note: on some terminals, the output may appear left-to-right. Even though the
-# ordering of the characters is logically correct, the terminal simply does not
-# support right-to-left display, because it is not fully Unicode-compliant.
-# If written to a file, such as a .txt plain-text document, or to HTML, etc.,
-# the strings should display in the correct sequence, since most text editors
-# and web browsers are fully Unicode-compliant and can handle RTL
-# (right-to-left) text correctly.
-print(hebrew_numeral(1))
-print(hebrew_numeral(14))
-print(hebrew_numeral(15))
-print(hebrew_numeral(114))
-print(hebrew_numeral(115))
+class TestDefaultStyle(unittest.TestCase):
+    # Note: on some non-Unicode-compliant terminals, the output may appear
+    # left-to-right. However, this script's output is logically correct. If written
+    # to a file, such as a .txt plain-text document, or to HTML, etc., the strings
+    # should display in the correct sequence, since most text editors and web
+    # browsers are fully Unicode-compliant and can handle RTL (right-to-left) text
+    # correctly.
+    def test_default(self):
+        assert hebrew_numeral(1) == u'א׳'
+        assert hebrew_numeral(14) == u'י״ד'
+        assert hebrew_numeral(15) == u'ט״ו'
+        assert hebrew_numeral(114) == u'קי״ד'
+        assert hebrew_numeral(115) == u'קט״ו'
+
+if __name__ == "__main__":
+    unittest.main()
