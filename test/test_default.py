@@ -25,7 +25,7 @@ import unittest
 from os import path
 import yaml  # requires `pip install pyyaml`
 proj_dir = path.dirname(path.dirname(path.realpath(__file__)))
-hsn = yaml.load(open(path.join(proj_dir, 'styles/default.yml')))
+hsn = yaml.load(open(path.join(proj_dir, 'styles/default.yml'), encoding="utf8"))
 
 
 def hebrew_numeral(val, gershayim=True):
