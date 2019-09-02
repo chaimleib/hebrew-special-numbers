@@ -52,13 +52,13 @@ In addition, sometimes single-letter numerals are spelled out in full. For such 
 2. Use a YAML library to load `hebrew-special-numbers/styles/default.yml` into an associative array. For example, in Python (with the `pyyaml` package installed):
     ```python
     import yaml
-    hsn = yaml.load(open('hebrew-special-numbers/styles/default.yml', encoding="utf8"))
+    hsn = yaml.load(open('hebrew-special-numbers/styles/default.yml', encoding="utf8"), Loader=yaml.SafeLoader)
     ```
 
 3. Optional: It is possible to create styles by cascading styles on top of each other. Load in any additional styles and recursively merge them into your associative array. This may require defining a recursive `merge` function.
     ```python
     # using merge() by Andrew Cooke, http://stackoverflow.com/a/7205107
-    chaipower = yaml.load(open('hebrew-special-numbers/styles/chaipower.yml', encoding="utf8"))
+    chaipower = yaml.load(open('hebrew-special-numbers/styles/chaipower.yml', encoding="utf8"), Loader=yaml.SafeLoader)
     hsn = merge(hsn, chaipower)
     ```
 
