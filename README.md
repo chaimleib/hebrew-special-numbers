@@ -28,7 +28,7 @@ This yields קכ״ג.
 
 To aid in such regular cases, this project includes a lookup table for generating regular numerals. See `styles/defaults.yml`, the 'numerals' and 'separators' keys.
 
-However, many such letter combinations produce words that are customarily avoided. On one side of the spectrum, since it is forbidden to take the Divine Name in vain, combinations otherwise spelling out Divine Names, like for 15 and 16, are spelled as 9+6 (ט״ו) or 9+7 (ט״ז), rather than as 10+5 and 10+6. On the opposite end of the spectrum, 270 would normally spell "evil" and 278 would normally spell "murder." Other examples exist. The solution for such words is to change the order to spell something else; for example, 270 changes from "evil" to "awaken" (ע״ר), and 278 from "murder" to "wash" (רח״צ).
+However, many such letter combinations produce words that are customarily avoided. On one side of the spectrum, since it is forbidden to take the Divine Name in vain, combinations otherwise spelling out Divine Names, like for 15 and 16, are spelled as 9+6 (ט״ו) or 9+7 (ט״ז), rather than as 10+5 and 10+6. On the opposite end of the spectrum, 270 would normally spell "evil" and 298 would normally spell "murder." Other examples exist. The solution for such words is to change the order to spell something else; for example, 270 changes from "evil" to "awaken" (ע״ר), and 298 from "murder" to "wash" (רח״צ).
 
 Since many such special exceptions exist, this project includes a list mapping the numerical values to the irregular Hebrew numeral spelling. See `styles/defaults.yml`, in the 'specials' key.
 
@@ -43,12 +43,12 @@ In addition, sometimes single-letter numerals are spelled out in full. For such 
     tar -xf hebrew-special-numbers-*.tar.gz  # produces hebrew-special-numbers/
     ```
    **OR**
-   
+
    If you also want to get the example code and this README, clone the entire git repository instead with
    ```bash
    git clone https://github.com/chaimleib/hebrew-special-numbers.git
    ```
-   
+
 2. Use a YAML library to load `hebrew-special-numbers/styles/default.yml` into an associative array. For example, in Python (with the `pyyaml` package installed):
     ```python
     import yaml
@@ -114,7 +114,7 @@ See also `test/test.py`.
     * remove redundant 'version.release' field, put under 'version.styles'
     * add optional 'versions.order' list
 
-[latest release]: https://github.com/chaimleib/hebrew-special-numbers/releases/download/2.0.0/hebrew-special-numbers-2.0.0.tar.gz
+[latest release]: https://github.com/chaimleib/hebrew-special-numbers/releases/latest
 [Hebrew numerals]: https://en.wikipedia.org/wiki/Hebrew_numerals
 [gematria]: https://en.wikipedia.org/wiki/Gematria
 [gershayim]: https://en.wikipedia.org/wiki/Gershayim
